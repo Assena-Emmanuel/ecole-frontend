@@ -4,7 +4,7 @@ import authV1ResetPasswordMaskDark from '@images/pages/auth-v1-reset-password-ma
 import authV1ResetPasswordMaskLight from '@images/pages/auth-v1-reset-password-mask-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import { provide } from 'vue'
+import { inject, provide } from 'vue'
 import { useRouter } from 'vue-router'
 
 const authV1ResetPasswordMask = useGenerateImageVariant(authV1ResetPasswordMaskLight, authV1ResetPasswordMaskDark)
@@ -23,7 +23,6 @@ definePage({
     public: true,
   },
 })
-
 
 
 const connexion = () =>{

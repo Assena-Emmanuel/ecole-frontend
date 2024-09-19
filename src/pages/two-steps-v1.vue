@@ -5,11 +5,14 @@ import authV1RegisterMaskLight from '@images/pages/auth-v1-register-mask-light.p
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import { useRouter } from 'vue-router'
+import { useUserStore } from './store/store'
+
 
 const authV1ThemeTwoStepMask = useGenerateImageVariant(authV1RegisterMaskLight, authV1RegisterMaskDark)
 const router = useRouter()
 const otp = ref('')
 const isOtpInserted = ref(false)
+const masqueEmail = ref('')
 
 const onFinish = () => {
   isOtpInserted.value = true
@@ -17,6 +20,12 @@ const onFinish = () => {
     isOtpInserted.value = false
     router.push('/')
   }, 2000)
+}
+
+
+const userStore = useUserStore()
+if(userStore.email){
+  masqueEmail.value = userStore.email.at(0).padEnd(15, '*')+userStore.email.slice(userStore.email.indexOf('@'))
 }
 
 const verification = () =>{
@@ -54,11 +63,9 @@ definePage({
       <VCardText>
         
         <p class="mb-1">
-          Nous avons envoyé un code de vérification à votre adresse mail. Saisissez ce code dans le champ ci-dessous.
+          Nous avons envoyé un code de vérification à l'adresse {{ masqueEmail }}. Saisissez ce code dans le champ ci-dessous.
         </p>
-        <h6 class="text-h6">
-          <!-- ******1234 -->
-        </h6>
+
       </VCardText>
 
       <VCardText>

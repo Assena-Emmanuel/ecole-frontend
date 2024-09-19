@@ -11,7 +11,9 @@ import authV2ForgotPasswordMaskDark from '@images/pages/auth-v2-forgot-password-
 import authV2ForgotPasswordMaskLight from '@images/pages/auth-v2-forgot-password-mask-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+import { provide } from 'vue'
 import { useRouter } from 'vue-router'
+import { useUserStore } from './store/store'
 
 const authThemeImg = useGenerateImageVariant(authV2ForgotPasswordIllustrationLight, authV2ForgotPasswordIllustrationDark, authV2ForgotPasswordIllustrationBorderedLight, authV2ForgotPasswordIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2ForgotPasswordMaskLight, authV2ForgotPasswordMaskDark)
@@ -23,8 +25,11 @@ const router = useRouter()
 const emailError = ref(false);
 const emailErrorMessage = ref('');
 
+const userStore = useUserStore()
+
 const reinitialisation = () => {
   if(validateEmail(email.value)){
+    userStore.setEmail(email.value)
     router.push({ name: 'authentification-two-step' })
   } else {
     emailError.value = true;

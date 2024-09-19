@@ -69,7 +69,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
   <Component
     :is="props.tag"
     ref="refNav"
-    class="layout-vertical-nav primary"
+    class="layout-vertical-nav bg"
     :class="[
       {
         'overlay-nav': configStore.isLessThanOverlayNavBreakpoint,
@@ -79,8 +79,9 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
       },
     ]"
   >
+  
     <!-- 👉 Header -->
-    <div class="nav-header">
+    <div class="nav-header bg">
       <slot name="nav-header">
         <RouterLink
           to="/"
@@ -169,6 +170,10 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
 <style lang="scss">
 @use "@configured-variables" as variables;
 @use "@layouts/styles/mixins";
+
+.bg {
+  background: #FFF;
+}
 
 // 👉 Vertical Nav
 .layout-vertical-nav {
