@@ -114,6 +114,12 @@ const widgetData = ref([
             :toggle-vertical-overlay-nav-active="toggleIsOverlayNavActive"
           />
         </div>
+        
+
+
+      </header>
+      <main class="layout-page-content">
+
         <div class="d-flex mb-6">
       <VRow>
         <template
@@ -157,9 +163,6 @@ const widgetData = ref([
       </VRow>
     </div>
 
-
-      </header>
-      <main class="layout-page-content">
         <div class="page-content-container">
           <slot />
         </div>

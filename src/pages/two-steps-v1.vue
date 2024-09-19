@@ -41,11 +41,11 @@ definePage({
 </script>
 
 <template>
-  <div class="auth-wrapper d-flex align-center justify-center align-center bg">
-    <VImg
+  <div class="auth-wrapper d-flex align-center justify-center align-center bg background">
+    <!-- <VImg
       :src="authV1ThemeTwoStepMask"
       class="d-none d-md-block auth-footer-mask flip-in-rtl"
-    />
+    /> -->
     <VCard
       class="auth-card pa-1 pa-sm-7"
       max-width="448"

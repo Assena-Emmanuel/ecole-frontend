@@ -49,20 +49,20 @@ const projects = ref([
   },
 ])
 
-const moreList = [
-  {
-    title: 'Last 28 Days',
-    value: 'Last 28 Days',
-  },
-  {
-    title: 'Last Month',
-    value: 'Last Month',
-  },
-  {
-    title: 'Last Year',
-    value: 'Last Year',
-  },
-]
+// const moreList = [
+//   {
+//     title: 'Last 28 Days',
+//     value: 'Last 28 Days',
+//   },
+//   {
+//     title: 'Last Month',
+//     value: 'Last Month',
+//   },
+//   {
+//     title: 'Last Year',
+//     value: 'Last Year',
+//   },
+// ]
 </script>
 
 <template>

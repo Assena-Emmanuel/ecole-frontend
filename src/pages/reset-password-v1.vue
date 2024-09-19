@@ -31,11 +31,8 @@ const connexion = () =>{
 </script>
 
 <template>
-  <div class="auth-wrapper d-flex align-center justify-center pa-4 bg">
-     <VImg
-      :src="authV1ResetPasswordMask"
-      class="d-none d-md-block auth-footer-mask flip-in-rtl"
-    />
+  <div class="auth-wrapper d-flex align-center justify-center pa-4 bg background">
+    
     <VCard
       class="auth-card pa-1 pa-sm-7"
       max-width="540"
@@ -88,7 +85,7 @@ const connexion = () =>{
                 block
                 type="submit"
               >
-                Enregistrer nouveau mot de passe
+                Enregistrer
               </VBtn>
             </VCol>
 

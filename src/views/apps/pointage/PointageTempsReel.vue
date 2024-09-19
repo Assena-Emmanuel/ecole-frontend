@@ -1,12 +1,11 @@
 <script setup>
-import { inject } from 'vue';
 
-const msg = inject('msg', 'Pas de provide')
 </script>
 
 <template>
   <VCard>
-    <VCardItem title="Popular Instructors">
+    <v-toolbar-title class="text-h6 text-center py-2 font-weight-bold" text="Pointage en temps réel"></v-toolbar-title>
+    <VCardItem>
       Temps et date
     </VCardItem>
     <VDivider />

@@ -81,7 +81,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
   >
   
     <!-- 👉 Header -->
-    <div class="nav-header bg">
+    <div class="nav-header">
       <slot name="nav-header">
         <RouterLink
           to="/"
@@ -172,7 +172,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
 @use "@layouts/styles/mixins";
 
 .bg {
-  background: #FFF;
+  background-color: #ffffff;
 }
 
 // 👉 Vertical Nav

@@ -54,7 +54,7 @@ definePage({
 <template>
 
   <div 
-    class="auth-wrapper d-flex align-center justify-center align-center"
+    class="auth-wrapper d-flex align-center justify-center align-center background"
     >
     <section>
       <VCard
@@ -63,15 +63,6 @@ definePage({
         elevation="2"
         class="auth-card mt-sm-0 pa-5 pa-lg-7 "
       >
-        <div class="d-flex justify-center">
-          <v-img
-          :aspect-ratio="1"
-          class="bg-white"
-          src="/src/assets/images/reinitialiser_pwd.png"
-          width="300"
-          height="300"
-        ></v-img>
-        </div>
         
         <VCardText>
           <h4 class="text-h4 mb-1">

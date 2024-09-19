@@ -1,6 +1,10 @@
 <script setup>
 import MapCard from '@/views/apps/pointage/MapCard.vue';
 import PremiersArrivesCard from '@/views/apps/pointage/PremiersArrivesCard.vue';
+import PointageTempsReel from '@/views/apps/pointage/PointageTempsReel.vue';
+import { provide } from 'vue';
+
+provide('msg', 'Hello assena')
 </script>
 <template>
   <div>
@@ -25,13 +29,13 @@ import PremiersArrivesCard from '@/views/apps/pointage/PremiersArrivesCard.vue';
         <PremiersArrivesCard />
       </VCol>
 
-      <!-- 👉 Top premier arrivé  -->
+      <!-- 👉 Pointage en temps reel  -->
       <VCol
         cols="12"
-        md="4"
+        md="9"
         sm="6"
       >
-        11
+        <PointageTempsReel />
       </VCol>
 
       <!-- Top dernier arrivé -->
