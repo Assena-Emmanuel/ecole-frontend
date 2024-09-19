@@ -1,25 +1,48 @@
+<script setup>
+import MapCard from '@/views/apps/pointage/MapCard.vue';
+import PremiersArrivesCard from '@/views/apps/pointage/PremiersArrivesCard.vue';
+</script>
 <template>
   <div>
-    <VCard
-      class="mb-6"
-      title="Kick start your project 🚀"
-    >
-      <VCardText>All the best for your new project.</VCardText>
-      <VCardText>
-        Please make sure to read our <a
-          href="https://demos.pixinvent.com/materialize-vuejs-admin-template/documentation/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-decoration-none"
-        >
-          Template Documentation
-        </a> to understand where to go from here and how to use our template.
-      </VCardText>
-    </VCard>
+  
 
-    <VCard title="Want to integrate JWT? 🔒">
-      <VCardText>We carefully crafted JWT flow so you can implement JWT with ease and with minimum efforts.</VCardText>
-      <VCardText>Please read our  JWT Documentation to get more out of JWT authentication.</VCardText>
-    </VCard>
-  </div>
+
+    <VRow class="match-height">
+      <VCol
+        cols="12"
+        md="9"
+      >
+      <!-- Afficher la carte (Map) -->
+        <MapCard />
+      </VCol>
+
+      <!-- 👉 Top premier arrivé  -->
+      <VCol
+        cols="12"
+        md="3"
+        sm="6"
+      >
+        <PremiersArrivesCard />
+      </VCol>
+
+      <!-- 👉 Top premier arrivé  -->
+      <VCol
+        cols="12"
+        md="4"
+        sm="6"
+      >
+        11
+      </VCol>
+
+      <!-- Top dernier arrivé -->
+      <VCol
+        cols="12"
+        md="4"
+        sm="6"
+      >
+        10
+      </VCol>
+      
+    </VRow>
+   </div>
 </template>

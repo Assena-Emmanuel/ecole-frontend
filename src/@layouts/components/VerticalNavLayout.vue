@@ -49,6 +49,34 @@ const verticalNavAttrs = computed(() => {
     additionalVerticalNavAttrs,
   }
 })
+
+const widgetData = ref([
+  {
+    title: 'Présence élèves',
+    value: '0',
+    change: 29,
+    desc: '',
+    icon: 'ri-group-line',
+    iconColor: 'primary',
+  },
+  {
+    title: 'Enseignants',
+    value: '0',
+    change: 18,
+    desc: '',
+    icon: 'ri-user-add-line',
+    iconColor: 'error',
+  },
+  {
+    title: 'Administration',
+    value: '0',
+    change: -14,
+    desc: '',
+    icon: 'ri-user-follow-line',
+    iconColor: 'success',
+  },
+
+])
 </script>
 
 <template>
@@ -80,12 +108,56 @@ const verticalNavAttrs = computed(() => {
         class="layout-navbar"
         :class="[{ 'navbar-blur': configStore.isNavbarBlurEnabled }]"
       >
-        <div class="navbar-content-container">
+        <div class="navbar-content-container mt-2 mb-4 rounded-4">
           <slot
             name="navbar"
             :toggle-vertical-overlay-nav-active="toggleIsOverlayNavActive"
           />
         </div>
+        <div class="d-flex mb-6">
+      <VRow>
+        <template
+          v-for="(data, id) in widgetData"
+          :key="id"
+        >
+          <VCol
+            cols="12"
+            md="4"
+            sm="4"
+          >
+            <VCard>
+              <VCardText>
+                <div class="d-flex justify-space-between">
+                  <div class="d-flex flex-column gap-y-1">
+                    <span class="text-base text-high-emphasis">{{ data.title }}</span>
+                    <div>
+                      <span class="text-h3 text-primary-darken-1">133</span>
+                      <span class="text-h5 font-weight-bold">/133</span>
+                    </div>
+                    <p class="text-sm mb-0">
+                      {{ data.desc }}
+                    </p>
+                  </div>
+                  <VAvatar
+                    :color="data.iconColor"
+                    variant="tonal"
+                    rounded
+                    size="42"
+                  >
+                    <VIcon
+                      :icon="data.icon"
+                      size="26"
+                    />
+                  </VAvatar>
+                </div>
+              </VCardText>
+            </VCard>
+          </VCol>
+        </template>
+      </VRow>
+    </div>
+
+
       </header>
       <main class="layout-page-content">
         <div class="page-content-container">
@@ -132,6 +204,7 @@ const verticalNavAttrs = computed(() => {
     z-index: variables.$layout-vertical-nav-layout-navbar-z-index;
 
     .navbar-content-container {
+      background-color: rgb(255, 255, 255) !important;
       block-size: variables.$layout-vertical-nav-navbar-height;
     }
 

@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Accueil',
+    title: 'Pointage',
     to: { name: 'root' },
     icon: { icon: 'ri-home-smile-2-line' },
   },

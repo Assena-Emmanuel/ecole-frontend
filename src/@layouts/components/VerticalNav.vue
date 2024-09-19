@@ -181,6 +181,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
   z-index: variables.$layout-vertical-nav-z-index;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff !important;
   block-size: 100%;
   inline-size: variables.$layout-vertical-nav-width;
   inset-block-start: 0;
@@ -191,6 +192,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
   .nav-header {
     display: flex;
     align-items: center;
+    background-color: #ffffff !important;
 
     .header-action {
       cursor: pointer;

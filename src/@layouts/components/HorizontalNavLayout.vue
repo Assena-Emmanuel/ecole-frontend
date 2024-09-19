@@ -27,7 +27,7 @@ const configStore = useLayoutConfigStore()
     >
       <!-- 👉 Navbar -->
       <div class="layout-navbar">
-        <div class="navbar-content-container">
+        <div class="navbar-content-container" >
           <slot name="navbar" />
         </div>
       </div>
@@ -72,6 +72,7 @@ const configStore = useLayoutConfigStore()
 
     .layout-navbar {
       z-index: variables.$layout-horizontal-nav-layout-navbar-z-index;
+      background-color: #9b5656 !important;
       block-size: variables.$layout-horizontal-nav-navbar-height;
 
       // ℹ️ For now we are not independently managing navbar and horizontal nav so we won't use below style to avoid conflicting with combo style of navbar and horizontal nav

@@ -199,46 +199,46 @@ const deleteUser = async id => {
   fetchUsers()
 }
 
-const widgetData = ref([
-  {
-    title: 'Enseignants',
-    value: '0',
-    change: 29,
-    desc: '',
-    icon: 'ri-group-line',
-    iconColor: 'primary',
-  },
-  {
-    title: 'Eleves',
-    value: '0',
-    change: 18,
-    desc: '',
-    icon: 'ri-user-add-line',
-    iconColor: 'error',
-  },
-  {
-    title: 'Parents d\'élèves',
-    value: '0',
-    change: -14,
-    desc: '',
-    icon: 'ri-user-follow-line',
-    iconColor: 'success',
-  },
-  // {
-  //   title: 'Pending Users',
-  //   value: '237',
-  //   change: 42,
-  //   desc: 'Last Week Analytics',
-  //   icon: 'ri-user-search-line',
-  //   iconColor: 'warning',
-  // },
-])
+// const widgetData = ref([
+//   {
+//     title: 'Enseignants',
+//     value: '0',
+//     change: 29,
+//     desc: '',
+//     icon: 'ri-group-line',
+//     iconColor: 'primary',
+//   },
+//   {
+//     title: 'Eleves',
+//     value: '0',
+//     change: 18,
+//     desc: '',
+//     icon: 'ri-user-add-line',
+//     iconColor: 'error',
+//   },
+//   {
+//     title: 'Parents d\'élèves',
+//     value: '0',
+//     change: -14,
+//     desc: '',
+//     icon: 'ri-user-follow-line',
+//     iconColor: 'success',
+//   },
+//   {
+//     title: 'Pending Users',
+//     value: '237',
+//     change: 42,
+//     desc: 'Last Week Analytics',
+//     icon: 'ri-user-search-line',
+//     iconColor: 'warning',
+//   },
+// ])
 </script>
 
 <template>
   <section>
     <!-- 👉 Widgets -->
-    <div class="d-flex mb-6">
+    <!-- <div class="d-flex mb-6">
       <VRow>
         <template
           v-for="(data, id) in widgetData"
@@ -283,7 +283,7 @@ const widgetData = ref([
           </VCol>
         </template>
       </VRow>
-    </div>
+    </div> -->
 
     <VCard class="mb-6">
       <VCardItem class="pb-4">

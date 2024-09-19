@@ -51,6 +51,7 @@ watch([
         />
         <UserProfile />
       </div>
+     
     </template>
 
     <!-- 👉 Pages -->
@@ -63,7 +64,7 @@ watch([
 
     <!-- 👉 Customizer -->
     <!-- <TheCustomizer /> -->
-  </VerticalNavLayout>
+  </VerticalNavLayout style="background-color: 'red';">
 </template>
 
 <style lang="scss">
