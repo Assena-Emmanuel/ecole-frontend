@@ -14,7 +14,7 @@ export const redirects = [
         name: 'authentification-reset-password',
         component: ()=>import('@/pages/reset-password-v1.vue')
     },
-    {
+    {     
         path: '/pages/login',
         name: 'login-page',
         component: ()=>import('@/pages/login.vue').catch(err => console.error(err))
