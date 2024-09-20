@@ -75,7 +75,6 @@
     "@tiptap/extension-subscript": "^2.5.8",
     "@tiptap/extension-superscript": "^2.5.8",
     "@tiptap/extension-underline": "^2.5.8",
-    "@videojs-player/vue": "1.0.0",
     "@vitejs/plugin-vue": "5.1.2",
     "@vitejs/plugin-vue-jsx": "4.0.0",
     "eslint": "8.57.0",
@@ -101,7 +100,6 @@
     "unplugin-auto-import": "0.18.2",
     "unplugin-vue-components": "0.27.3",
     "unplugin-vue-router": "0.8.8",
-    "video.js": "8.6.0",
     "vite": "5.3.5",
     "vite-plugin-vue-devtools": "7.3.7",
     "vite-plugin-vue-layouts": "0.11.0",
@@ -112,13 +110,11 @@
   "resolutions": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "@types/video.js": "^7",
     "sass": "1.76.0"
   },
   "overrides": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "@types/video.js": "^7",
     "sass": "1.76.0"
   },
   "msw": {
