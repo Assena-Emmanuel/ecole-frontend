@@ -1,6 +1,6 @@
 <script setup>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import avatar1 from '@images/avatars/avatar-1.png'
+import avatar1 from '@images/avatars/avatar-1.png';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 const userProfileList = [
   { type: 'divider' },
@@ -126,7 +126,7 @@ const userProfileList = [
                 color="error"
                 size="small"
                 append-icon="ri-logout-box-r-line"
-                :to="{ name: 'login' }"
+                to="/pages/login"
               >
                 Logout
               </VBtn>

@@ -1,7 +1,7 @@
 <script setup>
-import { useConfigStore } from '@core/stores/config'
-import { AppContentLayoutNav } from '@layouts/enums'
-import { switchToVerticalNavOnLtOverlayNavBreakpoint } from '@layouts/utils'
+import { useConfigStore } from '@core/stores/config';
+import { AppContentLayoutNav } from '@layouts/enums';
+import { switchToVerticalNavOnLtOverlayNavBreakpoint } from '@layouts/utils';
 
 const DefaultLayoutWithHorizontalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithHorizontalNav.vue'))
 const DefaultLayoutWithVerticalNav = defineAsyncComponent(() => import('./components/DefaultLayoutWithVerticalNav.vue'))
@@ -40,7 +40,7 @@ watch([
     <AppLoadingIndicator ref="refLoadingIndicator" />
 
     <RouterView v-slot="{ Component }">
-      <Suspense
+      <Suspense 
         :timeout="0"
         @fallback="isFallbackStateActive = true"
         @resolve="isFallbackStateActive = false"

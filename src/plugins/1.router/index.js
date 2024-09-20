@@ -8,11 +8,12 @@ function recursiveLayouts(route) {
       route.children[i] = recursiveLayouts(route.children[i])
     
     return route
-  }
+  }   
   
   return setupLayouts([route])[0]
 }
 
+ 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to) {
@@ -28,6 +29,7 @@ const router = createRouter({
       ...routes,
     ].map(route => recursiveLayouts(route)),
   ],
+
 })
 
 export { router }

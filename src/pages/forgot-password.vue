@@ -9,9 +9,6 @@ import authV2ForgotPasswordIllustrationDark from '@images/pages/auth-v2-forgot-p
 import authV2ForgotPasswordIllustrationLight from '@images/pages/auth-v2-forgot-password-illustration-light.png'
 import authV2ForgotPasswordMaskDark from '@images/pages/auth-v2-forgot-password-mask-dark.png'
 import authV2ForgotPasswordMaskLight from '@images/pages/auth-v2-forgot-password-mask-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
-import { provide } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from './store/store'
 
@@ -103,7 +100,7 @@ definePage({
               <VCol cols="12">
                 <RouterLink
                   class="d-flex align-center justify-center"
-                  :to="{ name: 'login' }"
+                  :to="{ name: 'login-page' }"
                 >
                   <VIcon
                     icon="ri-arrow-left-s-line"
