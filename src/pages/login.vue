@@ -13,12 +13,6 @@ import { inject, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const router = useRouter()
-definePage({
-  meta: {
-    layout: 'blank',
-    public: true,
-  },
-})
 
 const route = useRoute()
 const message = route.query.ok || false 
@@ -50,48 +44,11 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
 </script>
 
 <template>
-  <!-- <a href="javascript:void(0)">
-    <div class="app-logo auth-logo">
-      <VNodeRenderer :nodes="themeConfig.app.logo" />
-      <h1 class="app-logo-title">
-        {{ themeConfig.app.title }}
-      </h1>
-    </div>
-  </a> -->
-
   <VRow
     no-gutters
     class="d-flex justify-center align-center background"
   >
-    <!-- <VCol
-      md="8"
-      class="d-none d-md-flex align-center justify-center position-relative"
-    >
-      <div class="d-flex align-center justify-center pa-10">
-        <img
-          :src="authV2LoginIllustration"
-          class="auth-illustration w-100"
-          alt="auth-illustration"
-        >
-      </div>
-      <VImg
-        :src="authV2LoginMask"
-        class="d-none d-md-flex auth-footer-mask"
-        alt="auth-mask"
-      />
-    </VCol>
-    <VCol
-      cols="12"
-      md="4"
-      class="auth-card-v2 d-flex align-center justify-center"
-      style="background-color: rgb(var(--v-theme-surface));"
-    > -->
     
-      <!-- <VImg
-        :src="authV2LoginMask"
-        class="d-none d-md-flex auth-footer-mask"
-        alt="auth-mask"
-      /> -->
       <VCard
         flat
         :width="520"
@@ -121,7 +78,7 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
           <VForm @submit.prevent="login">
             <VRow>
               <!-- email -->
-              <VCol cols="12" class="mt-4">
+            <VCol cols="12" class="mt-4">
                 <VTextField
                   v-model="form.email"
                   autofocus
@@ -174,38 +131,6 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
                 </VBtn>
               </VCol>
 
-              <!-- create account
-              <VCol
-                cols="12"
-                class="text-body-1 text-center"
-              >
-                <span class="d-inline-block">
-                  New on our platform?
-                </span>
-                <a
-                  class="text-primary ms-1 d-inline-block text-body-1"
-                  href="javascript:void(0)"
-                >
-                  Create an account
-                </a>
-              </VCol>
-
-              <VCol
-                cols="12"
-                class="d-flex align-center"
-              >
-                <VDivider />
-                <span class="mx-4 text-high-emphasis">or</span>
-                <VDivider />
-              </VCol>
-
-              auth providers
-              <VCol
-                cols="12"
-                class="text-center"
-              >
-                <AuthProvider />
-              </VCol> -->
             </VRow>
           </VForm>
         </VCardText>

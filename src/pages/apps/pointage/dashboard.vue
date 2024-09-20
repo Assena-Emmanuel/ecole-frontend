@@ -1,6 +1,6 @@
-<template>
-  
+<!-- <template>
+  <p></p>
 </template>
 <script setup>
-
-</script>
+    alert()
+</script> -->
