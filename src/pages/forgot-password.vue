@@ -22,8 +22,8 @@ const authV1ThemeTwoStepMask = useGenerateImageVariant(authV1RegisterMaskLight, 
 
 const email = ref('')
 const router = useRouter()
-const emailError = ref(false);
-const emailErrorMessage = ref('');
+const emailError = ref(false)
+const emailErrorMessage = ref('')
 
 const userStore = useUserStore()
 
@@ -32,15 +32,16 @@ const reinitialisation = () => {
     userStore.setEmail(email.value)
     router.push({ name: 'authentification-two-step' })
   } else {
-    emailError.value = true;
-    emailErrorMessage.value = 'Email invalide';
+    emailError.value = true
+    emailErrorMessage.value = 'Email invalide'
   }
 }
 
 
 function validateEmail(email) {
-  const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  return pattern.test(email);
+  const pattern = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,6}$/
+
+  return pattern.test(email)
 }
 
 definePage({
@@ -52,10 +53,7 @@ definePage({
 </script>
 
 <template>
-
-  <div 
-    class="auth-wrapper d-flex align-center justify-center align-center background"
-    >
+  <div class="auth-wrapper d-flex align-center justify-center align-center background">
     <section>
       <VCard
         flat
@@ -63,7 +61,6 @@ definePage({
         elevation="2"
         class="auth-card mt-sm-0 pa-5 pa-lg-7 "
       >
-        
         <VCardText>
           <h4 class="text-h4 mb-1">
             Réinitialisation de mot de passe
@@ -113,21 +110,16 @@ definePage({
                   <span>RETOUR</span>
                 </RouterLink>
               </VCol>
-              
-                 
-              
             </VRow>
           </VForm>
         </VCardText>
       </VCard>
       <VImg
-      :src="authV1ThemeTwoStepMask"
-      class="d-none d-md-block auth-footer-mask flip-in-rtl"
-    />
+        :src="authV1ThemeTwoStepMask"
+        class="d-none d-md-block auth-footer-mask flip-in-rtl"
+      />
     </section>
-    
   </div>
-
 </template>
 
 <style lang="scss">

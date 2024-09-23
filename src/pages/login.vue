@@ -38,6 +38,13 @@ const login = () =>{
 const isPasswordVisible = ref(false)
 const authV2LoginMask = useGenerateImageVariant(authV2LoginMaskLight, authV2LoginMaskDark)
 const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
+
+definePage({
+  meta: {
+    layout: 'blank',
+    unauthenticatedOnly: true,
+  },
+})
 </script>
 
 <template>
@@ -45,93 +52,96 @@ const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationL
     no-gutters
     class="d-flex justify-center align-center background"
   >
-    
-      <VCard
-        flat
-        :width="520"
-        class="mt-12 mt-sm-0 pa-5 pa-lg-7"
-        :height="550"
+    <VCard
+      flat
+      :width="520"
+      class="mt-12 mt-sm-0 pa-5 pa-lg-7"
+      :height="550"
+    >
+      <VAlert
+        v-if="showAlert"
+        type="success"
+        value="true"
+        title="Succès"
       >
-        <v-alert
-          v-if="showAlert"
-          type="success"
-          :value="true"
-          title="Succès"
-        >
-          Le mot de passe a bien été modifier
-        </v-alert>
+        Le mot de passe a bien été modifier
+      </VAlert>
 
-        <VCardText>
-          <h2 class="text-h3 mb-1">
-            Se connecter
-          </h2>
+      <VCardText>
+        <h2 class="text-h3 mb-1">
+          Se connecter
+        </h2>
 
-          <p class="mb-0">
-            Veuillez vous connecter à votre compte 
-          </p>
-        </VCardText>
+        <p class="mb-0">
+          Veuillez vous connecter à votre compte 
+        </p>
+      </VCardText>
 
-        <VCardText>
-          <VForm @submit.prevent="login">
-            <VRow>
-              <!-- email -->
-            <VCol cols="12" class="mt-4">
-                <VTextField
-                  v-model="form.email"
-                  autofocus
-                  label="Email"
-                  type="email"
-                  placeholder="johndoe@email.com"
-                  width="100%"
-                />
-              </VCol>
+      <VCardText>
+        <VForm @submit.prevent="login">
+          <VRow>
+            <!-- email -->
+            <VCol 
+              cols="12" 
+              class="mt-4"
+            >
+              <VTextField
+                v-model="form.email"
+                autofocus
+                label="Email"
+                type="email"
+                placeholder="johndoe@email.com"
+                width="100%"
+              />
+            </VCol>
 
-              <!-- password -->
-              <VCol cols="12" class="mt-4">
-                <VTextField
-                  v-model="form.password"
-                  label="Password"
-                  placeholder="············"
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-                />
+            <!-- password -->
+            <VCol 
+              cols="12" 
+              class="mt-4"
+            >
+              <VTextField
+                v-model="form.password"
+                label="Password"
+                placeholder="············"
+                :type="isPasswordVisible ? 'text' : 'password'"
+                :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible"
+              />
 
-                <!-- remember me checkbox -->
-                <!-- <div class="d-flex align-center justify-space-between flex-wrap my-6 gap-x-2"> -->
-                  <VCheckbox
-                    v-model="form.remember"
-                    label="Se soumevenir"
-                    class="mt-4"
-                  />
-                  <div class="mt-4">
-                    <RouterLink
-                    class="text-primary"
-                    :to="{ name: 'forgot-password' }"
-                    
-                  >
-                   Mot de passe oublié?
-                  </RouterLink>
-                  </div>
-                  
-                  
-                <!-- </div> -->
-                
-
-                <!-- login button -->
-                <VBtn
-                  block
-                  type="submit"
-                  class="mt-8"
+              <!-- remember me checkbox -->
+              <!-- <div class="d-flex align-center justify-space-between flex-wrap my-6 gap-x-2"> -->
+              <VCheckbox
+                v-model="form.remember"
+                label="Se soumevenir"
+                class="mt-4"
+              />
+              <div class="mt-4">
+                <RouterLink
+                  class="text-primary"
+                  :to="{ name: 'forgot-password' }"
                 >
-                  Connexion
-                </VBtn>
-              </VCol>
+                  Mot de passe oublié?
+                </RouterLink>
+              </div>
+                
+                
+              <!-- </div> -->
+              
 
-            </VRow>
-          </VForm>
-        </VCardText>
-      </VCard>
+              <!-- login button -->
+              <VBtn
+                block
+                type="submit"
+                class="mt-8"
+              >
+                Connexion
+              </VBtn>
+            </VCol>
+          </VRow>
+        </VForm>
+      </VCardText>
+    </VCard>
     <!-- </VCol> -->
   </VRow>
 </template>
