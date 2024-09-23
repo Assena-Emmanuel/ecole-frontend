@@ -1,11 +1,8 @@
 <script setup>
-import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
-import authV1ResetPasswordMaskDark from '@images/pages/auth-v1-reset-password-mask-dark.png'
-import authV1ResetPasswordMaskLight from '@images/pages/auth-v1-reset-password-mask-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
-import { inject, provide } from 'vue'
-import { useRouter } from 'vue-router'
+import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant';
+import authV1ResetPasswordMaskDark from '@images/pages/auth-v1-reset-password-mask-dark.png';
+import authV1ResetPasswordMaskLight from '@images/pages/auth-v1-reset-password-mask-light.png';
+import { useRouter } from 'vue-router';
 
 const authV1ResetPasswordMask = useGenerateImageVariant(authV1ResetPasswordMaskLight, authV1ResetPasswordMaskDark)
 const router = useRouter()
@@ -93,7 +90,7 @@ const connexion = () =>{
             <VCol cols="12">
               <RouterLink
                 class="d-flex align-center justify-center"
-                :to="{ name: 'login' }"
+                :to="{ name: 'login-page' }"
               >
                 <VIcon
                   start

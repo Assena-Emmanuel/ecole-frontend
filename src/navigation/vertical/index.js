@@ -4,12 +4,7 @@ export default [
     to: { name: 'root' },
     icon: { icon: 'ri-home-smile-2-line' },
   },
-  // {
-  //   title: 'Gestion des élèves',
-  //   to: { name: 'apps-user-list' },
-  //   icon: { icon: 'ri-user-line' },
-  // },
-  {
+  {  
     title: 'Gestion des élèves',
     icon: { icon: 'ri-user-line' },
     children: [
