@@ -32,7 +32,7 @@ const form = ref({
 })
 
 const login = () =>{
-  router.push({ path: '/'})
+  router.push({ path: '/' })
 }
     
 const isPasswordVisible = ref(false)
