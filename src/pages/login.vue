@@ -9,6 +9,8 @@ import authV2LoginMaskLight from '@images/pages/auth-v2-login-mask-light.png'
 import { onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import Swal from 'sweetalert2'
+
 const router = useRouter()
 
 const route = useRoute()
@@ -37,6 +39,16 @@ const login = () =>{
     
 const isPasswordVisible = ref(false)
 
+
+const Alert = () => {
+  Swal.fire({
+    title: 'Success!',
+    text: 'This is a SweetAlert example.',
+    icon: 'success',
+    confirmButtonText: 'OK',
+  })
+}
+
 definePage({
   meta: {
     layout: 'blank',
@@ -53,8 +65,8 @@ definePage({
     <VCard
       flat
       :width="520"
-      class="mt-12 mt-sm-0 pa-5 pa-lg-7"
-      :height="550"
+      class="mt-8 mt-sm-0 pa-5 pa-lg-7"
+      :height="480"
     >
       <VAlert
         v-if="showAlert"
@@ -66,7 +78,7 @@ definePage({
       </VAlert>
 
       <VCardText>
-        <h2 class="text-h3 mb-1">
+        <h2 class="text-h3 mb-1 text-center">
           Se connecter
         </h2>
 
@@ -122,6 +134,7 @@ definePage({
                   Mot de passe oublié?
                 </RouterLink>
               </div>
+              <button @click="Alert">Show Alert</button>
                 
                 
               <!-- </div> -->
